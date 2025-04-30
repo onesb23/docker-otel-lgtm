@@ -85,6 +85,7 @@ COPY grafana-datasources.yaml /otel-lgtm/grafana/conf/provisioning/datasources/
 COPY grafana-dashboards.yaml /otel-lgtm/grafana/conf/provisioning/dashboards/
 
 FROM redhat/ubi9-micro:9.5-1745845480
+#FROM redhat/ubi9:9.5-1745854298 # For debug image
 
 RUN mkdir /otel-lgtm
 WORKDIR /otel-lgtm
