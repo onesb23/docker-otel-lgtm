@@ -2,7 +2,7 @@
 
 RELEASE=${1:-latest}
 
-docker pull docker.io/grafana/otel-lgtm:"${RELEASE}"
+docker pull docker.io/onesb/otel-lgtm:"${RELEASE}"
 
 touch .env
 
