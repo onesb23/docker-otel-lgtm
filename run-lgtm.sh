@@ -15,7 +15,7 @@ docker run \
 	-p 4318:4318 \
         -p 8126:8126 \
 	--rm \
-	-ti \
+	-d \
 	-v "$PWD"/container/grafana:/data/grafana \
 	-v "$PWD"/container/prometheus:/data/prometheus \
 	-v "$PWD"/container/loki:/data/loki \
