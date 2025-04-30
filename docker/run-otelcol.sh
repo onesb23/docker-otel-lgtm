@@ -4,6 +4,8 @@ source ./logging.sh
 
 secondary_config_file=""
 
+DD_RECEIVER_ENABLE=${DD_RECEIVER_ENABLE:-false}
+
 if [ "${DD_RECEIVER_ENABLE}" = 'true' ];then
   secondary_config_file="--config=file:./otelcol-config-datadog.yaml"
 fi
