@@ -4,9 +4,13 @@ source ./logging.sh
 
 secondary_config_file=""
 
+if [ "${DD_RECEIVER_ENABLE}" = 'true' ];then
+  secondary_config_file="--config=file:./otelcol-config-datadog.yaml"
+fi
+
 if [[ -v OTEL_EXPORTER_OTLP_ENDPOINT && -n ${OTEL_EXPORTER_OTLP_ENDPOINT} ]]; then
 	echo "Also enabling OTLP/HTTP export to ${OTEL_EXPORTER_OTLP_ENDPOINT}"
-	secondary_config_file="--config=file:./otelcol-config-export-http.yaml"
+	secondary_config_file="${secondary_config_file} --config=file:./otelcol-config-export-http.yaml"
 
 	if [[ -v OTEL_EXPORTER_OTLP_HEADERS && -n ${OTEL_EXPORTER_OTLP_HEADERS} ]]; then
 		echo "Adding headers from OTEL_EXPORTER_OTLP_HEADERS"
