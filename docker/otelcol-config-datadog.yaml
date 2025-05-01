@@ -11,3 +11,6 @@ service:
     traces:
       receivers: [datadog]
       exporters: [otlphttp/traces]
+    profiles:
+      receivers: [datadog]
+      exporters: [otlp/profiles]
