@@ -124,7 +124,9 @@ echo "The OpenTelemetry collector and the Grafana LGTM stack are up and running.
 echo "Open ports:"
 echo " - 4317: OpenTelemetry GRPC endpoint"
 echo " - 4318: OpenTelemetry HTTP endpoint"
-echo " - 8126: Datadog receiver endpoint"
+if [ "${DD_RECEIVER_ENABLE}" = 'true' ];then
+  echo " - 8126: OpenTelemetry Datadog HTTP endpoint"
+fi
 echo " - 3000: Grafana. User: admin, password: admin"
 
 sleep infinity
